@@ -79,41 +79,62 @@
                 </div>
             </div>
 
-            <script>var submitted=false;</script>
-            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHuOgfE2xPIFAuxXUt4n9eduiJ93OTE50_3EwSR45dC8EtAQ/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-            <div class="form">
+            <script>
+    var submitted = false;
+</script>
 
-                <div class="form-group">
-                   <input type="email" name="emailAddress" placeholder="Your email" required>
-                   <label for="email">Your email</label>
-                </div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfHuOgfE2xPIFAuxXUt4n9eduiJ93OTE50_3EwSR45dC8EtAQ/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="submitted = true;">
 
-                <div class="form-group">
-                   <input type="text" name="fullname" placeholder="Your name" required>
-                   <label for="fullname">Your name</label>
-                </div>
+    <div class="form">
 
-                 
+        <div class="form-group">
+            <input type="email"
+                   name="emailAddress"
+                   placeholder="Your email"
+                   required>
+            <label>Your email</label>
+        </div>
 
-                 <div class="form-group">
-                   <input type="tel" name="phonenumber" placeholder="Phone number" required>
-                   <label for="phone">Phone number</label>
-                </div>
+        <div class="form-group">
+            <input type="text"
+                   name="entry.2005620554"
+                   placeholder="Your name"
+                   required>
+            <label>Your name</label>
+        </div>
 
-                 <div class="form-group">
-                    <textarea name="message" name="entry.839337160" placeholder="Message" required></textarea>
-                    <label for="message">Message</label>
-                </div>
+        <div class="form-group">
+            <input type="tel"
+                   name="entry.1166974658"
+                   placeholder="Phone number"
+                   required>
+            <label>Phone number</label>
+        </div>
 
-                <div class="centered-button-wrapper">
-                    <button type="submit">Send</button>
-                </div>
+        <div class="form-group">
+            <textarea name="entry.839337160"
+                      placeholder="Message"
+                      required></textarea>
+            <label>Message</label>
+        </div>
 
-            </div>
+        <div class="centered-button-wrapper">
+            <button type="submit">Send</button>
+        </div>
 
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thankyou.html';}"></iframe>
-            
-        </form>
+    </div>
+
+    <iframe
+        name="hidden_iframe"
+        id="hidden_iframe"
+        style="display:none;"
+        onload="if (submitted) { window.location.href = 'thankyou.html'; }">
+    </iframe>
+
+</form>
 
         </div>
     </div>
