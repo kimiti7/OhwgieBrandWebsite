@@ -86,25 +86,24 @@
                 </div>
             </div>
             
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <input type="hidden" name="access_key" value="b5607e4e-6572-424a-9cf6-387b6a628b9d">
+            <form action="process-form.php" method="post">
             
             <div class="form">
 
                 <div class="form-group">
-                   <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
+                   <input type="email" id="email" name="email" placeholder="Your email" class="contact-inputs" required>
                    <label for="email">Your email</label>
                 </div>
 
                 <div class="form-group">
-                   <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
+                   <input type="text" id="name" name="name" placeholder="Your name" class="contact-inputs" required>
                    <label for="fullname">Your name</label>
                 </div>
 
                  
 
                  <div class="form-group">
-                   <input type="tel" name="phone" placeholder="Phone number" class="contact-inputs" required>
+                   <input type="tel" id="phone" name="phone" placeholder="Phone number" class="contact-inputs" required>
                    <label for="phone">Phone number</label>
                 </div>
 
