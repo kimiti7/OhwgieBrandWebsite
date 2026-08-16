@@ -21,3 +21,13 @@
     text-align: right;
     font-size: 1.25em;
 }
+
+.company-details-wrapper a{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.company-details-wrapper a:hover {
+    color: #cea135;
+}
