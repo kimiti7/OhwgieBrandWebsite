@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <form 
+            <form id="contact-form" >
             
             <div class="form">
 
@@ -119,6 +119,28 @@
             </div>
 
         </form>
+
+        <script>
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+        email: document.getElementById("email").value,
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value
+    };
+
+    const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    alert(result.message);
+});
+</script>
 
         </div>
     </div>
