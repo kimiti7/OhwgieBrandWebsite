@@ -108,7 +108,7 @@
                 </div>
 
                  <div class="form-group">
-                    <textarea name="message" placeholder="Message" class="contact-inputs" required></textarea>
+                    <textarea id="message" name="message" placeholder="Message" class="contact-inputs" required></textarea>
                     <label for="message">Message</label>
                 </div>
 
@@ -138,7 +138,13 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
     });
 
     const result = await response.json();
-    alert(result.message);
+
+if (response.ok) {
+    window.location.href = "thankyou.html";
+} else {
+    alert("Error: " + result.message);
+}
+
 });
 </script>
 
