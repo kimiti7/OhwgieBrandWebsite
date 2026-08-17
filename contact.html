@@ -120,9 +120,14 @@
 
         </form>
 
-        <script>
+      <script>
 document.getElementById("contact-form").addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const button = document.querySelector("button[type='submit']");
+    
+    button.disabled = true;
+    button.textContent = "Sending...";
 
     const formData = {
         email: document.getElementById("email").value,
@@ -131,26 +136,31 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
         message: document.getElementById("message").value
     };
 
-    const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-    });
+    try {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        });
 
-    const result = await response.json();
+        const result = await response.json();
 
-    const button = document.querySelector("button[type='submit']");
-        button.disabled = true;
-        button.textContent = "Sending...";
+        if (response.ok) {
+            document.getElementById("contact-form").reset();
+            window.location.href = "thankyou.html";
+        } else {
+            alert("Error: " + result.message);
+            button.disabled = false;
+            button.textContent = "Send";
+        }
 
-if (response.ok) {
-    document.getElementById("contact-form").reset();
-    window.location.href = "thankyou.html";
-} else {
-    alert("Error: " + result.message);
-}
+    } catch (error) {
+        console.error(error);
+        alert("Failed to send message: " + error.message);
+        button.disabled = false;
+        button.textContent = "Send";
+    }
 });
-
 </script>
 
         </div>
