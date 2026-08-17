@@ -51,7 +51,9 @@
                     <img src="Images/Logos/Offreek Logo.png" alt="Logo">
                 </div>
 
-                <div class="company-details-wrapper">
+                
+
+                 <div class="company-details-wrapper">
                     <a href="tel:+254748692188">
                     <i class="fa-solid fa-phone"></i>
                     </a>
@@ -59,13 +61,15 @@
                     <div>
                         <a href="tel:+254748692188">+254748692188</a>
                     </div>
+
                 </div>
 
-                <div class="company-details-wrapper">
+                 <div class="company-details-wrapper">
                     <i class="fa-solid fa-clock"></i>
                     <div>
                         7 AM - 10 PM
                     </div>
+
                 </div>
 
                 <div class="company-details-wrapper">
@@ -78,11 +82,13 @@
                         Ruiru<br>Nairobi, KE, 254
                         </a>
                     </div>
+
                 </div>
             </div>
 
-            <!-- Fixed the broken form element tags here -->
-            <form id="contactForm" class="form">
+            <form 
+            
+            <div class="form">
 
                 <div class="form-group">
                    <input type="email" id="email" name="email" placeholder="Your email" class="contact-inputs" required>
@@ -91,16 +97,18 @@
 
                 <div class="form-group">
                    <input type="text" id="name" name="name" placeholder="Your name" class="contact-inputs" required>
-                   <label for="name">Your name</label>
+                   <label for="fullname">Your name</label>
                 </div>
 
-                <div class="form-group">
+                 
+
+                 <div class="form-group">
                    <input type="tel" id="phone" name="phone" placeholder="Phone number" class="contact-inputs" required>
                    <label for="phone">Phone number</label>
                 </div>
 
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Message" class="contact-inputs" required></textarea>
+                 <div class="form-group">
+                    <textarea name="message" placeholder="Message" class="contact-inputs" required></textarea>
                     <label for="message">Message</label>
                 </div>
 
@@ -108,10 +116,10 @@
                     <button type="submit">Send</button>
                 </div>
 
-                <!-- Status element for user feedback messages -->
-                <p id="statusText" style="font-weight: bold; text-align: center; margin-top: 15px; font-family: 'Roboto', sans-serif;"></p>
+            </div>
 
-            </form>
+        </form>
+
         </div>
     </div>
 
@@ -132,90 +140,42 @@
             </span>
         </div>
         
-        <div class="links-wrapper">
-            <div class="nav-link">
-                <a href="index.html">Home</a>
+            <div class="links-wrapper">
+                <div class="nav-link">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link">
+                    <a href="about.html">About</a>
+                </div>
+
+                <div class="nav-link">
+                    <a href="menu.html">Menu</a>
+                </div>
+
+                <div class="nav-link">
+                    <a href="contact.html">Contact</a>
+                </div>
             </div>
 
-            <div class="nav-link">
-                <a href="about.html">About</a>
+            <div class="social-media-icons-wrapper">
+                <a href="https://www.instagram.com/offreeksociety/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                 <a href="https://x.com/offreek2023">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                 <a href="https://www.facebook.com/profile.php?id=61579505592524">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
             </div>
 
-            <div class="nav-link">
-                <a href="menu.html">Menu</a>
+            <div class="copyright-wrapper">
+                &copy; 2025 Offreek &#124; All rights reserved
             </div>
-
-            <div class="nav-link">
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-
-        <div class="social-media-icons-wrapper">
-            <a href="https://www.instagram.com/offreeksociety/">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="https://x.com/offreek2023">
-                <i class="fa-brands fa-x-twitter"></i>
-            </a>
-
-            <a href="https://www.facebook.com/profile.php?id=61579505592524">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-        </div>
-
-        <div class="copyright-wrapper">
-            &copy; 2025 Offreek | All rights reserved
-        </div>
     </div> 
 
-    <!-- Load official Supabase library script via secure CDNJS provider -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.45.1/supabase.min.js"></script>
-    <script>
-        // 1. Paste your unique Supabase Project credentials below
-        const SUPABASE_URL = "YOUR_SUPABASE_URL_HERE"; 
-        const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY_HERE";
-
-        // 2. Initialize the Supabase Client connection instance
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-        // 3. Intercept form submissions securely
-        document.getElementById('contactForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Stop standard form webpage refresh behavior
-
-            const emailInput = document.getElementById('email').value;
-            const nameInput = document.getElementById('name').value;
-            const phoneInput = document.getElementById('phone').value;
-            const messageInput = document.getElementById('message').value;
-            const statusText = document.getElementById('statusText');
-
-            statusText.style.color = "#007bff";
-            statusText.innerText = "Sending your message...";
-
-            // 4. Send the payload values directly into your Supabase database table
-            // Make sure the table name matches (e.g., 'todos' or 'messages')
-            const { data, error } = await supabase
-                .from('messages') 
-                .insert([
-                    { 
-                        email: emailInput,
-                        name: nameInput,
-                        phone: phoneInput,
-                        message: messageInput
-                    }
-                ]);
-
-            // 5. Present simple error handling and clear elements on success
-            if (error) {
-                console.error("Database error occurred:", error);
-                statusText.style.color = "#dc3545";
-                statusText.innerText = "❌ Failed to send message. Please try again.";
-            } else {
-                statusText.style.color = "#28a745";
-                statusText.innerText = "🎉 Success! Your message was sent securely.";
-                document.getElementById('contactForm').reset(); // Empty form fields
-            }
-        });
-    </script>
-</body>
+    </body>
 </html>
