@@ -139,13 +139,18 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
 
     const result = await response.json();
 
+    const button = document.querySelector("button[type='submit']");
+        button.disabled = true;
+        button.textContent = "Sending...";
+
 if (response.ok) {
+    document.getElementById("contact-form").reset();
     window.location.href = "thankyou.html";
 } else {
     alert("Error: " + result.message);
 }
-
 });
+
 </script>
 
         </div>
