@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Homepage</title>
+    <title>Offreek Cookies | Artisan Bakery in Ruiru</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/homepage.css">
@@ -18,26 +18,26 @@
     <link rel="stylesheet" href="styles/media-queries.css">
 
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-   
- </head>
+</head>
 <body>
-    <div class="navigation-wrapper">
 
+<!-- Floating Cart Button -->
+<a href="cart.html" class="floating-top-cart" title="View Cart">
+    <div class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge-count" id="floatingCartBadge">0</span>
+    </div>
+    <span class="cart-btn-label">Cart</span>
+</a>
+
+    <div class="navigation-wrapper">
         <div class="left-column">
             <div class="icon">
-                <a href="tel:+254748692188">
-                <i class="fa-solid fa-phone-volume"></i>
-                </a>
+                <a href="tel:+254748692188"><i class="fa-solid fa-phone-volume"></i></a>
             </div>
-
             <div class="contact-hours-wrapper">
-                <div class="phone">
-                    <a href="tel:+254748692188">+254748692188</a>
-                </div>
-
-                <div class="hours">
-                    7 AM - 10 PM
-                </div>
+                <div class="phone"><a href="tel:+254748692188">+254748692188</a></div>
+                <div class="hours">7 AM - 10 PM</div>
             </div>
         </div>
 
@@ -45,84 +45,143 @@
             <div class="banner-image">
                 <img src="Images/Logos/Offreek Logo.png" alt="Logo">
             </div>
-
             <div class="links-wrapper">
-                <div class="nav-link">
-                    <a href="index.html">Home</a>
-                </div>
-
-                <div class="nav-link">
-                    <a href="about.html">About</a>
-                </div>
-
-                <div class="nav-link">
-                    <a href="menu.html">Menu</a>
-                </div>
-
-                <div class="nav-link">
-                    <a href="contact.html">Contact</a>
-                </div>
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="gear.html">Gear</a></div>
+                <div class="nav-link"><a href="merch.html">Merch</a></div>
+                <div class="nav-link"><a href="contact.html">Contact</a></div>
             </div>
         </div>
 
         <div class="right-column">
             <div class="address-wrapper">
-                <a href="#map">
-                    Ruiru<br>
-                    Nairobi, KE, 254
-                </a>
+                <a href="#map">Ruiru<br>Nairobi, KE, 254</a>
             </div>
-
             <div class="contact-icon">
-                <a href="#map">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                </a>
+                <a href="#map"><i class="fa-solid fa-map-location-dot"></i></a>
             </div>
         </div>
-
     </div>
 
     <div class="hero-section">
-        <div class="top-heading">
-            <h1>Offreek Society</h1>
-        </div>
-
-        <div class="bottom-heading">
-            <h3>Clothing Brand</h3>
-        </div>
+        <h1>Offreek Cookies</h1>
+        <h3>Artisanal Baking & Fresh Fruits Delivered in Ruiru</h3>
+        <a href="menu.html" class="cta-btn">View Our Menu</a>
     </div>    
     
-    <div class="features-section">
-       <div class="columns-wrapper">
-            <div class="column">
-                <i class="fa-solid fa-truck"></i>
-                <p>We Deliver!</p>
 
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
+    <div class="editorial-section">
+
+        <!-- Shelf 1 -->
+        <div class="story-block" style="animation-delay: 0.2s;">
+            <div class="story-text">
+                <span class="story-badge">Shelf 01</span>
+                <h2>The Classics</h2>
+                <p>There is nothing quite like a traditional chocolate chip, vanilla, or golden butter cookie baked to absolute perfection. We start every morning combining premium ingredients to give you that timeless, nostalgic crunch.</p>
             </div>
-
-            <div class="column">
-                <i class="fa-solid fa-wifi"></i>
-                <p>Create your Wardrobe!</p>
-
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-
-            <div class="column">
-                <i class="fa-solid fa-chart-simple"></i>
-                <p>100+ types of clothes!</p>
-
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                </p>
+            <div class="story-visual">
+                <span>[Classic Cookie High-Res Visual]</span>
             </div>
         </div>
+
+        <!-- Shelf 2 -->
+        <div class="story-block" style="animation-delay: 0.3s;">
+            <div class="story-text">
+                <span class="story-badge">Shelf 02</span>
+                <h2>The Chewy Series</h2>
+                <p>Designed for those who crave a rich, melt-in-your-mouth experience. Our fudgy, soft-baked, double-chocolate variations are slightly underbaked in the center to maintain that perfect gooey texture.</p>
+            </div>
+            <div class="story-visual">
+                <span>[Chewy Cookie High-Res Visual]</span>
+            </div>
+        </div>
+
+        <!-- Shelf 3 -->
+        <div class="story-block" style="animation-delay: 0.4s;">
+            <div class="story-text">
+                <span class="story-badge">Shelf 03</span>
+                <h2>Stuffed Cores</h2>
+                <p>We take decadence to the next level. Break these premium cookies apart to reveal hidden molten cores of salted caramel, smooth peanut butter, or toasted marshmallow.</p>
+            </div>
+            <div class="story-visual">
+                <span>[Stuffed Cookie High-Res Visual]</span>
+            </div>
+        </div>
+
+        <!-- Shelf 4 -->
+        <div class="story-block" style="animation-delay: 0.5s;">
+            <div class="story-text">
+                <span class="story-badge">Shelf 04</span>
+                <h2>Mini Snack Packs</h2>
+                <p>Sometimes you just need a quick bite. Our mini cookies are packed into convenient bundles, ideal for sharing with friends on campus or keeping you fueled during long study sessions.</p>
+            </div>
+            <div class="story-visual">
+                <span>[Mini Cookie High-Res Visual]</span>
+            </div>
+        </div>
+
+        <!-- Shelf 5 -->
+        <div class="story-block" style="animation-delay: 0.6s;">
+            <div class="story-text">
+                <span class="story-badge">Shelf 05</span>
+                <h2>Presentation Platters</h2>
+                <p>Elevate your next gathering. Our beautifully assorted presentation boxes are carefully curated for parties, weekend hangouts, or as a thoughtful gift for someone special.</p>
+            </div>
+            <div class="story-visual">
+                <span>[Platter High-Res Visual]</span>
+            </div>
+        </div>
+
+        <!-- Shelf 6 -->
+        <div class="story-block" style="animation-delay: 0.7s;">
+            <div class="story-text">
+                <span class="story-badge">Shelf 06</span>
+                <h2>Fruit & Cookie Combos</h2>
+                <p>Balance is everything. We offer specialized packages that bundle our rich, freshly baked cookies with locally sourced, hand-sliced fruit bowls and refreshing natural drinks.</p>
+            </div>
+            <div class="story-visual">
+                <span>[Combo High-Res Visual]</span>
+            </div>
+        </div>
+
     </div>
 
+<div class="delivery-calculator-section">
+    <div class="calculator-card">
+        <h2><i class="fa-solid fa-route"></i> Estimate Delivery & Fee</h2>
+        <p>Select your delivery drop-off zone in Ruiru to calculate distance and rider fare.</p>
+
+        <div class="calc-form">
+            <div class="input-group">
+                <label for="deliveryZone">Select Delivery Location:</label>
+                <select id="deliveryZone" class="select-input" onchange="calculateDelivery()">
+                    <option value="0" data-fee="0" data-time="0">-- Select Drop-off Zone --</option>
+                    <option value="Ruiru Town Center" data-fee="100" data-time="15-20 mins">Ruiru Town Center (~1.5 km)</option>
+                    <option value="Kimbo / Matangi" data-fee="150" data-time="20-25 mins">Kimbo / Matangi (~3.0 km)</option>
+                    <option value="Kenyatta University (KU)" data-fee="200" data-time="25-30 mins">KU Main Campus (~5.5 km)</option>
+                    <option value="Membley Estate" data-fee="200" data-time="25-30 mins">Membley Estate (~6.0 km)</option>
+                    <option value="Kiu River / Kahawa Sukari" data-fee="250" data-time="30-40 mins">Kahawa Sukari / Kiu River (~7.5 km)</option>
+                    <option value="Githurai 45" data-fee="300" data-time="35-45 mins">Githurai 45 (~9.0 km)</option>
+                </select>
+            </div>
+
+            <div class="calc-results" id="calcResults" style="display: none;">
+                <div class="result-box">
+                    <span>Estimated Fare</span>
+                    <strong id="fareAmount">KES 0</strong>
+                </div>
+                <div class="result-box">
+                    <span>Est. Arrival Time</span>
+                    <strong id="etaTime">0 mins</strong>
+                </div>
+            </div>
+
+            <a id="whatsappDeliveryBtn" href="#" class="order-btn" style="display: none; margin-top: 15px;" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Confirm & Request Rider on WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
 
     <div class="map-section" id="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.038717017838!2d36.971757573322655!3d-1.1326741354740797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f479b6fcec515%3A0xfbf789465f996959!2sKimbo!5e0!3m2!1sen!2ske!4v1755693249329!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -132,52 +191,28 @@
         <div class="logo-footer">
             <img src="Images/Logos/Offreek Logo.png" alt="Logo">
         </div>
-
         <div class="footer-phone-hours">
-            <span class="phone">
-                <a href="tel:+254748692188">+254748692188</a>
-            </span>
-
-            <span class="hours">
-                7 AM - 10 PM
-            </span>
+            <span class="phone"><a href="tel:+254748692188">+254748692188</a></span>
+            <span class="hours">7 AM - 10 PM</span>
         </div>
-        
-            <div class="links-wrapper">
-                <div class="nav-link">
-                    <a href="index.html">Home</a>
-                </div>
-
-                <div class="nav-link">
-                    <a href="about.html">About</a>
-                </div>
-
-                <div class="nav-link">
-                    <a href="menu.html">Menu</a>
-                </div>
-
-                <div class="nav-link">
-                    <a href="contact.html">Contact</a>
-                </div>
-            </div>
-
-            <div class="social-media-icons-wrapper">
-                <a href="https://www.instagram.com/offreeksociety/">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                 <a href="https://x.com/offreek2023">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-
-                 <a href="https://www.facebook.com/profile.php?id=61579505592524">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-            </div>
-
-            <div class="copyright-wrapper">
-                &copy; 2025 Offreek &#124; All rights reserved
-            </div>
+        <div class="links-wrapper">
+            <div class="nav-link"><a href="index.html">Home</a></div>
+            <div class="nav-link"><a href="gear.html">Gear</a></div>
+            <div class="nav-link"><a href="merch.html">Merch</a></div>
+            <div class="nav-link"><a href="contact.html">Contact</a></div>
+        </div>
+        <div class="social-media-icons-wrapper">
+            <a href="https://www.instagram.com/offreeksociety/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/offreek2023"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61579505592524"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="copyright-wrapper">
+            &copy; <span id="year"></span> OHWGIE &#124; All rights reserved
+        </div>
     </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
-</html>          
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Merch | Offreek Society Ruiru</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/merch.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/media-queries.css">
+
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+<body>
+
+<!-- Floating Cart Button -->
+<a href="cart.html" class="floating-top-cart" title="View Cart">
+    <div class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge-count" id="floatingCartBadge">0</span>
+    </div>
+    <span class="cart-btn-label">Cart</span>
+</a>
+
+    <div class="navigation-wrapper">
+        <div class="left-column">
+            <div class="icon">
+                <a href="tel:+254748692188"><i class="fa-solid fa-phone-volume"></i></a>
+            </div>
+            <div class="contact-hours-wrapper">
+                <div class="phone"><a href="tel:+254748692188">+254748692188</a></div>
+                <div class="hours">7 AM - 7 PM</div>
+            </div>
+        </div>
+
+        <div class="center-column">
+            <div class="banner-image">
+                <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+            </div>
+            <div class="links-wrapper">
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="gear.html">Gear</a></div>
+                <div class="nav-link"><a href="merch.html">Merch</a></div>
+                <div class="nav-link"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+
+        <div class="right-column" style="display: flex; flex-direction: column; align-items: flex-end; gap: 15px;">
+            <a href="cart.html" class="header-cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> Cart (0)
+            </a>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="address-wrapper">
+                    <a href="#map">Ruiru<br>Nairobi, KE, 254</a>
+                </div>
+                <div class="contact-icon">
+                    <a href="#map"><i class="fa-solid fa-map-location-dot"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="merch-hero">
+        <h1>Official Merch</h1>
+        <h3>Wear & Carry the Offreek Lifestyle</h3>
+    </div>
+
+    <div class="merch-section">
+        <div class="merch-grid">
+
+            <div class="merch-card card-featured" style="animation-delay: 0.1s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Hoodies">
+                    <span class="merch-badge">Featured</span>
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Apparel</span>
+                    <h2>Offreek Heavyweight Hoodie</h2>
+                    <p>Premium 400GSM fleece-lined streetwear hoodie with embroidered chest logo and oversized drop-shoulder fit.</p>
+                    <div class="merch-price">KES 2,500</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Offreek Heavyweight Hoodie', 2500)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.2s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="T-shirts">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Apparel</span>
+                    <h2>Signature T-Shirt</h2>
+                    <p>Heavyweight 100% combed cotton tee with minimal brand graphics and breathable fit.</p>
+                    <div class="merch-price">KES 1,200</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Signature T-Shirt', 1200)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.3s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Caps">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Headwear</span>
+                    <h2>Structured Snapback Cap</h2>
+                    <p>Classic 6-panel cap with high-density embroidered crest and adjustable strap back.</p>
+                    <div class="merch-price">KES 800</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Structured Snapback Cap', 800)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.4s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Bracelet">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Gear</span>
+                    <h2>Engraved Wrist Bracelet</h2>
+                    <p>Durable matte black beaded bracelet featuring an engraved metallic Offreek emblem.</p>
+                    <div class="merch-price">KES 350</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Engraved Wrist Bracelet', 350)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.5s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Bottle">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Lifestyle</span>
+                    <h2>Insulated Flask Bottle</h2>
+                    <p>Double-wall stainless steel thermal flask keeping liquids cold for 24 hours or hot for 12 hours.</p>
+                    <div class="merch-price">KES 1,100</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Insulated Flask Bottle', 1100)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.6s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Cup">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Lifestyle</span>
+                    <h2>Ceramic Artisan Mug</h2>
+                    <p>Matte-finish ceramic coffee and tea mug designed for cozy mornings and study breaks.</p>
+                    <div class="merch-price">KES 500</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Ceramic Artisan Mug', 500)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.7s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Notebook">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Stationery</span>
+                    <h2>Hardcover Journal Notebook</h2>
+                    <p>A5 textured hardcover journal with ribbon marker, elastic closure, and 160 GSM thick pages.</p>
+                    <div class="merch-price">KES 650</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Hardcover Journal Notebook', 650)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.8s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Pen">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Stationery</span>
+                    <h2>Matte Metal Rollerball Pen</h2>
+                    <p>Sleek black ink rollerball pen built with a weighted aluminum body for effortless writing.</p>
+                    <div class="merch-price">KES 250</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Matte Metal Rollerball Pen', 250)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 0.9s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Key holder">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Everyday Carry</span>
+                    <h2>Leather Key Ring Holder</h2>
+                    <p>Hand-stitched genuine leather strap keychain with brushed metal key loop.</p>
+                    <div class="merch-price">KES 300</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Leather Key Ring Holder', 300)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 1.0s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Tray">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Essentials</span>
+                    <h2>Custom Printed Tray</h2>
+                    <p>Multi-purpose metal utility tray featuring full-color high-resolution Offreek artwork.</p>
+                    <div class="merch-price">KES 700</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Custom Printed Tray', 700)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="merch-card" style="animation-delay: 1.1s;">
+                <div class="merch-card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS5aXPiSsYxWbIN_2B9XaMRZYLxEEOVkHcEY3dSFjmhYkiRr9KeJLGxkArwh7z1Y7wf8-7ovY0LJnOUWSg" alt="Lighter">
+                </div>
+                <div class="merch-card-content">
+                    <span class="merch-tag">Essentials</span>
+                    <h2>Custom Torch Lighter</h2>
+                    <p>Refillable jet-flame lighter with metallic finish and safety lock.</p>
+                    <div class="merch-price">KES 400</div>
+                    <div class="card-actions">
+                        <button class="order-btn cart-add-btn" onclick="addToCart('Custom Torch Lighter', 400)">
+                            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="logo-footer">
+            <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+        </div>
+        <div class="footer-phone-hours">
+            <span class="phone"><a href="tel:+254748692188">+254748692188</a></span>
+            <span class="hours">7 AM - 7 PM</span>
+        </div>
+        <div class="links-wrapper">
+            <div class="nav-link"><a href="index.html">Home</a></div>
+            <div class="nav-link"><a href="gear.html">Gear</a></div>
+            <div class="nav-link"><a href="merch.html">Merch</a></div>
+            <div class="nav-link"><a href="contact.html">Contact</a></div>
+        </div>
+        <div class="social-media-icons-wrapper">
+            <a href="https://www.instagram.com/offreeksociety/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/offreek2023"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61579505592524"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="copyright-wrapper">
+            &copy; <span id="year"></span> OHWGIE &#124; All rights reserved
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

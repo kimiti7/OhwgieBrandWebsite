@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Your Cart & Checkout | Offreek Society Ruiru</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/media-queries.css">
+
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+<body>
+
+<!-- Floating Cart Button -->
+<a href="cart.html" class="floating-top-cart" title="View Cart">
+    <div class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge-count" id="floatingCartBadge">0</span>
+    </div>
+    <span class="cart-btn-label">Cart</span>
+</a>
+
+    <div class="navigation-wrapper">
+        <div class="left-column">
+            <div class="icon">
+                <a href="tel:+254748692188"><i class="fa-solid fa-phone-volume"></i></a>
+            </div>
+            <div class="contact-hours-wrapper">
+                <div class="phone"><a href="tel:+254748692188">+254748692188</a></div>
+                <div class="hours">7 AM - 7 PM</div>
+            </div>
+        </div>
+
+        <div class="center-column">
+            <div class="banner-image">
+                <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+            </div>
+            <div class="links-wrapper">
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="gear.html">Gear</a></div>
+                <div class="nav-link"><a href="merch.html">Merch</a></div>
+                <div class="nav-link"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+
+        <div class="right-column" style="display: flex; flex-direction: column; align-items: flex-end; gap: 15px;">
+            <a href="cart.html" class="header-cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> Cart (0)
+            </a>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="address-wrapper">
+                    <a href="#map">Ruiru<br>Nairobi, KE, 254</a>
+                </div>
+                <div class="contact-icon">
+                    <a href="#map"><i class="fa-solid fa-map-location-dot"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-hero">
+        <h1>Your Shopping Cart</h1>
+        <h3>Review Items & Complete Your Checkout</h3>
+    </div>
+
+    <div class="cart-checkout-section">
+        <div class="checkout-grid">
+
+            <!-- Left Column: Cart Items -->
+            <div class="checkout-block cart-items-block">
+                <h2><i class="fa-solid fa-basket-shopping"></i> Order Summary</h2>
+                
+                <div class="cart-table-wrapper">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartTableBody">
+                            <tr>
+                                <td colspan="5" class="empty-cart-msg">Your cart is currently empty. Visit Menu, Gear, or Merch to add items!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Direct Support Buttons -->
+                <div class="direct-contact-bar">
+                    <span>Need quick assistance with your order?</span>
+                    <div class="contact-action-btns">
+                        <a href="tel:+254748692188" class="contact-pill call-pill"><i class="fa-solid fa-phone"></i> Call Us Direct</a>
+                        <a href="https://wa.me/254748692188" target="_blank" class="contact-pill chat-pill"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Checkout Options & Total -->
+            <div class="checkout-block checkout-details-block">
+                <h2><i class="fa-solid fa-clipboard-check"></i> Checkout Options</h2>
+
+                <form id="checkoutForm" onsubmit="handleCheckout(event)">
+                    
+                    <!-- Fulfillment Option -->
+                    <div class="input-group">
+                        <label>Order Option:</label>
+                        <div class="radio-options">
+                            <label class="radio-card">
+                                <input type="radio" name="fulfillment" value="delivery" checked onclick="toggleFulfillment('delivery')">
+                                <span><i class="fa-solid fa-motorcycle"></i> Rider Delivery</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="fulfillment" value="pickup" onclick="toggleFulfillment('pickup')">
+                                <span><i class="fa-solid fa-store"></i> Store Pickup (Ruiru)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Customer Contact Info -->
+                    <div class="input-group">
+                        <label for="custName">Your Name:</label>
+                        <input type="text" id="custName" placeholder="Enter full name" required class="input-field">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="custPhone">Phone Number (M-Pesa):</label>
+                        <input type="tel" id="custPhone" placeholder="07XX XXX XXX" required class="input-field">
+                    </div>
+
+                    <!-- Location Fields (Delivery Only) -->
+                    <div id="deliveryFields">
+                        <div class="input-group">
+                            <label for="dropLocation">Drop-off Address / Landmark:</label>
+                            <input type="text" id="dropLocation" placeholder="e.g. Kimbo, Matangi Road, House #4" class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="distanceKM">Est. Distance from Ruiru Shop (KM):</label>
+                            <input type="number" id="distanceKM" placeholder="Enter approx. KM" min="1" oninput="updateDeliveryFee()" class="input-field">
+                        </div>
+                    </div>
+
+                    <!-- Special Instructions / Conditions -->
+                    <div class="input-group">
+                        <label for="custNotes">Special Conditions / Comments:</label>
+                        <textarea id="custNotes" rows="3" placeholder="e.g. Call upon arrival, leave at main entrance, no onions in fruit bowl..." class="input-field"></textarea>
+                    </div>
+
+                    <!-- Order Price Summary -->
+                    <div class="price-summary-box">
+                        <div class="summary-row">
+                            <span>Items Subtotal:</span>
+                            <strong id="subtotalDisplay">KES 0</strong>
+                        </div>
+                        <div class="summary-row" id="deliveryFeeRow">
+                            <span>Delivery Fee:</span>
+                            <strong id="deliveryFeeDisplay">KES 0</strong>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total Due (Pay on Delivery):</span>
+                            <strong id="grandTotalDisplay">KES 0</strong>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-order-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Confirm & Submit Order
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="logo-footer">
+            <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+        </div>
+        <div class="footer-phone-hours">
+            <span class="phone"><a href="tel:+254748692188">+254748692188</a></span>
+            <span class="hours">7 AM - 7 PM</span>
+        </div>
+        <div class="links-wrapper">
+            <div class="nav-link"><a href="index.html">Home</a></div>
+            <div class="nav-link"><a href="gear.html">Gear</a></div>
+            <div class="nav-link"><a href="merch.html">Merch</a></div>
+            <div class="nav-link"><a href="contact.html">Contact</a></div>
+        </div>
+        <div class="social-media-icons-wrapper">
+            <a href="https://www.instagram.com/offreeksociety/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/offreek2023"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61579505592524"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="copyright-wrapper">
+            &copy; <span id="year"></span> OHWGIE &#124; All rights reserved
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Sample Cart State for demonstration (If no local storage exists)
+        var cartState = [
+            { id: 1, name: "Choc-Chip Box (3pcs)", price: 200, qty: 2 },
+            { id: 2, name: "Deluxe Fruit Bowl", price: 250, qty: 1 }
+        ];
+
+        var currentDeliveryFee = 0;
+        var currentFulfillment = "delivery";
+
+        document.addEventListener("DOMContentLoaded", function() {
+            renderCart();
+        });
+
+        function renderCart() {
+            var tbody = document.getElementById("cartTableBody");
+            tbody.innerHTML = "";
+
+            if (cartState.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="empty-cart-msg">Your cart is currently empty. Visit Menu, Gear, or Merch to add items!</td></tr>';
+                calculateTotals(0);
+                return;
+            }
+
+            var subtotal = 0;
+            cartState.forEach(function(item, index) {
+                var itemSub = item.price * item.qty;
+                subtotal += itemSub;
+
+                var tr = document.createElement("tr");
+                tr.innerHTML = 
+                    '<td><strong>' + item.name + '</strong></td>' +
+                    '<td>KES ' + item.price + '</td>' +
+                    '<td><input type="number" value="' + item.qty + '" min="1" onchange="updateQty(' + index + ', this.value)" class="qty-input"></td>' +
+                    '<td>KES ' + itemSub + '</td>' +
+                    '<td><button onclick="removeItem(' + index + ')" class="remove-btn">&times;</button></td>';
+                tbody.appendChild(tr);
+            });
+
+            calculateTotals(subtotal);
+        }
+
+        function updateQty(index, newQty) {
+            cartState[index].qty = parseInt(newQty) || 1;
+            renderCart();
+        }
+
+        function removeItem(index) {
+            cartState.splice(index, 1);
+            renderCart();
+        }
+
+        function toggleFulfillment(type) {
+            currentFulfillment = type;
+            var deliveryFields = document.getElementById("deliveryFields");
+            var deliveryRow = document.getElementById("deliveryFeeRow");
+
+            if (type === "pickup") {
+                deliveryFields.style.display = "none";
+                deliveryRow.style.display = "none";
+                currentDeliveryFee = 0;
+            } else {
+                deliveryFields.style.display = "block";
+                deliveryRow.style.display = "flex";
+                updateDeliveryFee();
+            }
+            renderCart();
+        }
+
+        function updateDeliveryFee() {
+            if (currentFulfillment === "pickup") return;
+
+            var km = parseFloat(document.getElementById("distanceKM").value);
+            if (isNaN(km) || km <= 0) {
+                currentDeliveryFee = 0;
+            } else if (km <= 3) {
+                currentDeliveryFee = 100;
+            } else if (km <= 15) {
+                currentDeliveryFee = Math.round(100 + (km - 3) * 25);
+            } else {
+                currentDeliveryFee = Math.round(400 + (km - 15) * 20);
+            }
+            renderCart();
+        }
+
+        function calculateTotals(subtotal) {
+            document.getElementById("subtotalDisplay").textContent = "KES " + subtotal;
+            document.getElementById("deliveryFeeDisplay").textContent = "KES " + currentDeliveryFee;
+            var grandTotal = subtotal + currentDeliveryFee;
+            document.getElementById("grandTotalDisplay").textContent = "KES " + grandTotal;
+        }
+
+        function handleCheckout(e) {
+            e.preventDefault();
+            if (cartState.length === 0) {
+                alert("Your cart is empty! Please add items before placing an order.");
+                return;
+            }
+
+            var name = document.getElementById("custName").value.trim();
+            var phone = document.getElementById("custPhone").value.trim();
+            var notes = document.getElementById("custNotes").value.trim();
+
+            var orderText = "🛒 *NEW ORDER - OFFREEK SOCIETY*\n\n";
+            orderText += "*Customer:* " + name + " (" + phone + ")\n";
+            orderText += "*Option:* " + (currentFulfillment === "delivery" ? "🚀 Rider Delivery" : "🏪 Store Pickup") + "\n";
+
+            if (currentFulfillment === "delivery") {
+                var loc = document.getElementById("dropLocation").value.trim();
+                var km = document.getElementById("distanceKM").value;
+                orderText += "*Drop-off:* " + loc + " (~" + km + " KM)\n";
+                orderText += "*Delivery Fee:* KES " + currentDeliveryFee + "\n";
+            }
+
+            orderText += "\n*ITEMS ORDERED:*\n";
+            var subtotal = 0;
+            cartState.forEach(function(item) {
+                var itemSub = item.price * item.qty;
+                subtotal += itemSub;
+                orderText += "• " + item.name + " x" + item.qty + " = KES " + itemSub + "\n";
+            });
+
+            var grandTotal = subtotal + currentDeliveryFee;
+            orderText += "\n*TOTAL DUE:* KES " + grandTotal + " (Pay on Delivery)\n";
+
+            if (notes !== "") {
+                orderText += "\n*Notes/Conditions:* " + notes + "\n";
+            }
+
+            var whatsappUrl = "https://wa.me/254748692188?text=" + encodeURIComponent(orderText);
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+</body>
+</html>

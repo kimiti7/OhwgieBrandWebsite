@@ -1,226 +1,321 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Contact Us</title>
-
+    <title>Contact & Support | Offreek Society Ruiru</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/nav.css">
-    <link rel="stylesheet" href="styles/homepage.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/skewed-header.css">
-    <link rel="stylesheet" href="styles/page-container.css">
-    <link rel="stylesheet" href="styles/helpers.css">
     <link rel="stylesheet" href="styles/contact.css">
-    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/media-queries.css">
 
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
-    <div class="skewed-header">
-        <div class="background-image">
-            <img src="Images/Backgrounds/premium_photo-1675186049222-0b5018db6ce9.jpg" alt="Header Background">
+
+<!-- Floating Cart Button -->
+<a href="cart.html" class="floating-top-cart" title="View Cart">
+    <div class="cart-icon-wrapper">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge-count" id="floatingCartBadge">0</span>
+    </div>
+    <span class="cart-btn-label">Cart</span>
+</a>
+
+    <div class="navigation-wrapper">
+        <div class="left-column">
+            <div class="icon">
+                <a href="tel:+254748692188"><i class="fa-solid fa-phone-volume"></i></a>
+            </div>
+            <div class="contact-hours-wrapper">
+                <div class="phone"><a href="tel:+254748692188">+254748692188</a></div>
+                <div class="hours">7 AM - 7 PM</div>
+            </div>
         </div>
 
-        <div class="skewed-header-wrapper">
-            <div class="skewed-header-content">
-                <div class="heading-wrapper">
-                    <h1>Contact</h1>
-                </div>
+        <div class="center-column">
+            <div class="banner-image">
+                <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+            </div>
+            <div class="links-wrapper">
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="gear.html">Gear</a></div>
+                <div class="nav-link"><a href="merch.html">Merch</a></div>
+                <div class="nav-link"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
 
-                <div class="links-wrapper">
-                    <div class="nav-link"><a href="index.html">Home</a></div>
-                    <div class="nav-link"><a href="about.html">About</a></div>
-                    <div class="nav-link"><a href="menu.html">Menu</a></div>
-                    <div class="nav-link"><a href="contact.html">Contact</a></div>
-                </div>                    
+        <div class="right-column" style="display: flex; flex-direction: column; align-items: flex-end; gap: 15px;">
+            <a href="cart.html" class="header-cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> Cart (0)
+            </a>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="address-wrapper">
+                    <a href="#map">Ruiru<br>Nairobi, KE, 254</a>
+                </div>
+                <div class="contact-icon">
+                    <a href="#map"><i class="fa-solid fa-map-location-dot"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="page-container">
-        <div class="contact-grid-wrapper">
-            <div class="company-metadata-sidebar-wrapper">
-                <div class="logo">
-                    <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+    <div class="contact-hero">
+        <h1>Contact & Support</h1>
+        <h3>Get in Touch & Send Your Feedback</h3>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div>
+                    <h2>Customer Care</h2>
+                    <p>Reach out to us for catering, custom merchandise orders, or inquiries regarding local deliveries around Ruiru and Nairobi environs.</p>
+                    <ul class="info-list">
+                        <li><i class="fa-solid fa-location-dot"></i> Ruiru, Kiambu County, KE</li>
+                        <li><i class="fa-solid fa-phone"></i> <a href="tel:+254748692188">+254 748 692 188</a></li>
+                        <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/254748692188" target="_blank">Chat on WhatsApp</a></li>
+                        <li><i class="fa-solid fa-clock"></i> Daily: 7 AM - 7 PM</li>
+                    </ul>
                 </div>
-
-                
-
-                 <div class="company-details-wrapper">
-                    <a href="tel:+254748692188">
-                    <i class="fa-solid fa-phone"></i>
-                    </a>
-
-                    <div>
-                        <a href="tel:+254748692188">+254748692188</a>
-                    </div>
-
-                </div>
-
-                 <div class="company-details-wrapper">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        7 AM - 10 PM
-                    </div>
-
-                </div>
-
-                <div class="company-details-wrapper">
-                    <a href="index.html#map">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    </a>
-
-                    <div>
-                        <a href="index.html#map">
-                        Ruiru<br>Nairobi, KE, 254
-                        </a>
-                    </div>
-
-                </div>
+                <button class="terms-btn" onclick="toggleTermsModal()"><i class="fa-solid fa-file-contract"></i> View Terms & Conditions</button>
             </div>
 
-            <form id="contact-form" >
+            <div class="contact-form-wrapper">
+                <h2>Send a Message</h2>
+                <form class="contact-form" action="#" method="POST" onsubmit="handleContactSubmit(event)">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Your Email / Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <select class="select-input">
+                            <option value="general">General Inquiry</option>
+                            <option value="delivery">Delivery Status</option>
+                            <option value="custom">Custom Merch Order</option>
+                            <option value="catering">Bakery Catering</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <textarea rows="4" placeholder="Write your question or message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="support-grid-section">
+        <div class="support-block" style="grid-column: 1 / -1;">
+            <h2><i class="fa-solid fa-comments"></i> Customer Comments</h2>
             
-            <div class="form">
-
-                <div class="form-group">
-                   <input type="email" id="email" name="email" placeholder="Your email" class="contact-inputs" required>
-                   <label for="email">Your email</label>
-                </div>
-
-                <div class="form-group">
-                   <input type="text" id="name" name="name" placeholder="Your name" class="contact-inputs" required>
-                   <label for="fullname">Your name</label>
-                </div>
-
-                 
-
-                 <div class="form-group">
-                   <input type="tel" id="phone" name="phone" placeholder="Phone number" class="contact-inputs" required>
-                   <label for="phone">Phone number</label>
-                </div>
-
-                 <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Message" class="contact-inputs" required></textarea>
-                    <label for="message">Message</label>
-                </div>
-
-                <div class="centered-button-wrapper">
-                    <button type="submit">Send</button>
-                </div>
-
+            <div class="reviews-list" id="reviewsList">
             </div>
 
-        </form>
-
-      <script>
-document.getElementById("contact-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const button = document.querySelector("button[type='submit']");
-    
-    button.disabled = true;
-    button.textContent = "Sending...";
-
-    const formData = {
-        email: document.getElementById("email").value,
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        message: document.getElementById("message").value
-    };
-
-    try {
-        const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-        });
-
-        const result = await response.json();
-
-        if (response.ok) {
-            document.getElementById("contact-form").reset();
-            window.location.href = "thankyou.html";
-        } else {
-            alert("Error: " + result.message);
-            button.disabled = false;
-            button.textContent = "Send";
-        }
-
-    } catch (error) {
-        console.error(error);
-        alert("Failed to send message: " + error.message);
-        button.disabled = false;
-        button.textContent = "Send";
-    }
-});
-</script>
-
+            <div class="add-comment-box">
+                <h3>Leave a Comment</h3>
+                <form id="commentForm" onsubmit="postComment(event)">
+                    <input type="text" id="commentAuthor" placeholder="Your Name" required class="input-group-field">
+                    <textarea id="commentText" rows="2" placeholder="Write your comment..." required class="input-group-field"></textarea>
+                    <button type="submit" class="submit-btn" style="padding: 10px 18px; font-size: 0.85rem; align-self: flex-start;">Post Comment</button>
+                </form>
+            </div>
         </div>
     </div>
 
-    <div class="spacer60"></div>
-    
+<div class="delivery-calculator-section">
+    <div class="calculator-card">
+        <h2><i class="fa-solid fa-route"></i> Estimate Delivery & Fee</h2>
+        <p>Select your delivery drop-off zone in Ruiru to calculate distance and rider fare.</p>
+
+        <div class="calc-form">
+            <div class="input-group">
+                <label for="deliveryZone">Select Delivery Location:</label>
+                <select id="deliveryZone" class="select-input" onchange="calculateDelivery()">
+                    <option value="0" data-fee="0" data-time="0">-- Select Drop-off Zone --</option>
+                    <option value="Ruiru Town Center" data-fee="100" data-time="15-20 mins">Ruiru Town Center (~1.5 km)</option>
+                    <option value="Kimbo / Matangi" data-fee="150" data-time="20-25 mins">Kimbo / Matangi (~3.0 km)</option>
+                    <option value="Kenyatta University (KU)" data-fee="200" data-time="25-30 mins">KU Main Campus (~5.5 km)</option>
+                    <option value="Membley Estate" data-fee="200" data-time="25-30 mins">Membley Estate (~6.0 km)</option>
+                    <option value="Kiu River / Kahawa Sukari" data-fee="250" data-time="30-40 mins">Kahawa Sukari / Kiu River (~7.5 km)</option>
+                    <option value="Githurai 45" data-fee="300" data-time="35-45 mins">Githurai 45 (~9.0 km)</option>
+                </select>
+            </div>
+
+            <div class="calc-results" id="calcResults" style="display: none;">
+                <div class="result-box">
+                    <span>Estimated Fare</span>
+                    <strong id="fareAmount">KES 0</strong>
+                </div>
+                <div class="result-box">
+                    <span>Est. Arrival Time</span>
+                    <strong id="etaTime">0 mins</strong>
+                </div>
+            </div>
+
+            <a id="whatsappDeliveryBtn" href="#" class="order-btn" style="display: none; margin-top: 15px;" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Confirm & Request Rider on WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+    <div class="map-section" id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.038717017838!2d36.971757573322655!3d-1.1326741354740797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f479b6fcec515%3A0xfbf789465f996959!2sKimbo!5e0!3m2!1sen!2ske!4v1755693249329!5m2!1sen!2ske" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Floating AI Assistant Button -->
+    <div class="chatbot-trigger" onclick="toggleChatbot()">
+        <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <!-- Floating AI Assistant Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <span><i class="fa-solid fa-robot"></i> Offreek AI Assistant</span>
+            <button onclick="toggleChatbot()" class="close-chat">&times;</button>
+        </div>
+        <div class="chatbot-body" id="chatBody">
+            <div class="chat-msg bot">Hi! 👋 I'm your Offreek AI Assistant. Ask me anything about our cookies, delivery in Ruiru, or merch!</div>
+        </div>
+        <div class="chatbot-footer">
+            <input type="text" placeholder="Type a question..." id="chatInput" onkeypress="handleKeyPress(event)">
+            <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Modal for Terms & Conditions -->
+    <div class="terms-modal" id="termsModal" onclick="closeTermsOnOutsideClick(event)">
+        <div class="terms-content">
+            <span class="close-terms" onclick="toggleTermsModal()">&times;</span>
+            <h2>Terms & Conditions</h2>
+            <p><strong>1. Orders & Deliveries:</strong> Delivery operating hours are strictly from 7:00 AM to 7:00 PM daily across Ruiru and environs.</p>
+            <p><strong>2. Payment Terms:</strong> Payment is strictly required upon delivery via M-Pesa or cash.</p>
+            <p><strong>3. Merchandise Return Policy:</strong> We enforce a strict NO RETURN policy on all apparel, accessories, and merchandise once sold and delivered.</p>
+            <p><strong>4. Fresh Goods Policy:</strong> All bakery items, cookies, and fresh fruit bowls carry a strict NO RETURN policy upon dispatch and delivery.</p>
+        </div>
+    </div>
+
     <div class="footer">
         <div class="logo-footer">
             <img src="Images/Logos/Offreek Logo.png" alt="Logo">
         </div>
-
         <div class="footer-phone-hours">
-            <span class="phone">
-                <a href="tel:+254748692188">+254748692188</a>
-            </span>
-
-            <span class="hours">
-                7 AM - 10 PM
-            </span>
+            <span class="phone"><a href="tel:+254748692188">+254748692188</a></span>
+            <span class="hours">7 AM - 7 PM</span>
         </div>
-        
-            <div class="links-wrapper">
-                <div class="nav-link">
-                    <a href="index.html">Home</a>
-                </div>
+        <div class="links-wrapper">
+            <div class="nav-link"><a href="index.html">Home</a></div>
+            <div class="nav-link"><a href="gear.html">Gear</a></div>
+            <div class="nav-link"><a href="merch.html">Merch</a></div>
+            <div class="nav-link"><a href="contact.html">Contact</a></div>
+        </div>
+        <div class="social-media-icons-wrapper">
+            <a href="https://www.instagram.com/offreeksociety/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/offreek2023"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61579505592524"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="copyright-wrapper">
+            &copy; <span id="year"></span> OHWGIE &#124; All rights reserved
+        </div>
+    </div>
 
-                <div class="nav-link">
-                    <a href="about.html">About</a>
-                </div>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-                <div class="nav-link">
-                    <a href="menu.html">Menu</a>
-                </div>
+        function toggleChatbot() {
+            var chat = document.getElementById("chatbotWindow");
+            chat.style.display = (chat.style.display === "flex") ? "none" : "flex";
+        }
 
-                <div class="nav-link">
-                    <a href="contact.html">Contact</a>
-                </div>
-            </div>
+        function handleKeyPress(e) {
+            if (e.key === "Enter") {
+                sendChatMessage();
+            }
+        }
 
-            <div class="social-media-icons-wrapper">
-                <a href="https://www.instagram.com/offreeksociety/">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+        function sendChatMessage() {
+            var input = document.getElementById("chatInput");
+            var query = input.value.trim();
+            if (query !== "") {
+                var body = document.getElementById("chatBody");
+                
+                var userMsg = document.createElement("div");
+                userMsg.className = "chat-msg user";
+                userMsg.textContent = query;
+                body.appendChild(userMsg);
+                input.value = "";
+                body.scrollTop = body.scrollHeight;
 
-                 <a href="https://x.com/offreek2023">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
+                setTimeout(function() {
+                    var botMsg = document.createElement("div");
+                    botMsg.className = "chat-msg bot";
+                    botMsg.textContent = getAIResponse(query);
+                    body.appendChild(botMsg);
+                    body.scrollTop = body.scrollHeight;
+                }, 700);
+            }
+        }
 
-                 <a href="https://www.facebook.com/profile.php?id=61579505592524">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-            </div>
+        function getAIResponse(q) {
+            var lower = q.toLowerCase();
+            if (lower.includes("delivery") || lower.includes("where") || lower.includes("ruiru")) {
+                return "We deliver across Ruiru, Kimbo, KU environs, and Membley daily between 7 AM and 7 PM!";
+            } else if (lower.includes("pay") || lower.includes("mpesa") || lower.includes("cost")) {
+                return "Payment is strictly upon delivery via M-Pesa or cash.";
+            } else if (lower.includes("hour") || lower.includes("time") || lower.includes("open")) {
+                return "Our delivery operating hours are from 7:00 AM to 7:00 PM.";
+            } else if (lower.includes("cookie") || lower.includes("menu") || lower.includes("food")) {
+                return "Check out our Menu page for fresh soft-baked cookies and deluxe fruit bowls!";
+            } else {
+                return "Thanks for reaching out! You can WhatsApp us directly at +254 748 692 188 for instant support.";
+            }
+        }
 
-            <div class="copyright-wrapper">
-                &copy; 2025 Offreek &#124; All rights reserved
-            </div>
-    </div> 
+        function toggleTermsModal() {
+            var modal = document.getElementById("termsModal");
+            modal.style.display = (modal.style.display === "flex") ? "none" : "flex";
+        }
 
-    </body>
+        function closeTermsOnOutsideClick(e) {
+            if (e.target.id === "termsModal") {
+                toggleTermsModal();
+            }
+        }
+
+        function postComment(e) {
+            e.preventDefault();
+            var author = document.getElementById("commentAuthor").value.trim();
+            var text = document.getElementById("commentText").value.trim();
+
+            if (author && text) {
+                var list = document.getElementById("reviewsList");
+                var card = document.createElement("div");
+                card.className = "review-card";
+
+                card.innerHTML = '<p>"' + text + '"</p>' +
+                                 '<span class="reviewer">- ' + author + '</span>';
+
+                list.prepend(card);
+                document.getElementById("commentForm").reset();
+            }
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been sent successfully.");
+            e.target.reset();
+        }
+    </script>
+</body>
 </html>
