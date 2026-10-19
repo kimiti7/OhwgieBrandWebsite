@@ -60,8 +60,8 @@ function addToCart(name, price) {
     saveCart();
     updateGlobalCartCount();
     
-    // Quick feedback toast or alert
-    alert(`Added "${name}" to your cart!`);
+    // Modern sleek toast notification instead of intrusive browser alert
+    showCartNotification(`${name} added to cart!`);
 }
 
 function saveCart() {
@@ -70,10 +70,53 @@ function saveCart() {
 
 function updateGlobalCartCount() {
     const totalItems = cartState.reduce((sum, item) => sum + item.qty, 0);
+    
+    // Update floating top-right badge
+    const badge = document.getElementById('floatingCartBadge');
+    if (badge) {
+        badge.textContent = totalItems;
+    }
+
+    // Update header cart buttons
     const cartButtons = document.querySelectorAll('.header-cart-btn');
     cartButtons.forEach(btn => {
         btn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Cart (${totalItems})`;
     });
+}
+
+// Non-intrusive Toast Notification Banner
+function showCartNotification(message) {
+    const existingToast = document.getElementById('cartToast');
+    if (existingToast) existingToast.remove();
+
+    const toast = document.createElement('div');
+    toast.id = 'cartToast';
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background-color: #000;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: fadeIn 0.3s ease-in-out;
+    `;
+    
+    toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: #25D366;"></i> ${message}`;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => toast.remove(), 400);
+    }, 2500);
 }
 
 /* =========================================
@@ -318,66 +361,4 @@ function handleContactSubmit(e) {
     e.preventDefault();
     alert("Thank you! Your message has been sent successfully.");
     e.target.reset();
-}
-
-function updateGlobalCartCount() {
-    const totalItems = cartState.reduce((sum, item) => sum + item.qty, 0);
-    
-    // Update the stylish floating badge count
-    const badge = document.getElementById('floatingCartBadge');
-    if (badge) {
-        badge.textContent = totalItems;
-    }
-
-    // Update any standard cart text instances
-    const cartButtons = document.querySelectorAll('.header-cart-btn');
-    cartButtons.forEach(btn => {
-        btn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Cart (${totalItems})`;
-    });
-}
-
-/* =========================================
-   GLOBAL CART MANAGEMENT (script.js)
-   ========================================= */
-
-// Retrieve cart from local storage or start fresh
-let cartState = JSON.parse(localStorage.getItem('offreek_cart')) || [];
-
-document.addEventListener("DOMContentLoaded", function () {
-    updateGlobalCartCount();
-});
-
-function addToCart(name, price) {
-    // Check if item already exists in cart
-    const existingIndex = cartState.findIndex(item => item.name === name);
-    if (existingIndex > -1) {
-        cartState[existingIndex].qty += 1;
-    } else {
-        cartState.push({ id: Date.now(), name: name, price: price, qty: 1 });
-    }
-    
-    // Save to localStorage so cart persists across page navigation
-    localStorage.setItem('offreek_cart', JSON.stringify(cartState));
-    
-    // Update floating cart badge counter
-    updateGlobalCartCount();
-    
-    // Feedback notification
-    alert(`Added "${name}" to your cart!`);
-}
-
-function updateGlobalCartCount() {
-    const totalItems = cartState.reduce((sum, item) => sum + item.qty, 0);
-    
-    // Update floating top-right badge
-    const badge = document.getElementById('floatingCartBadge');
-    if (badge) {
-        badge.textContent = totalItems;
-    }
-
-    // Update any text cart buttons
-    const cartButtons = document.querySelectorAll('.header-cart-btn');
-    cartButtons.forEach(btn => {
-        btn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Cart (${totalItems})`;
-    });
 }
