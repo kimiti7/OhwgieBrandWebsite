@@ -1,8 +1,8 @@
 /* ==========================================================================
-   OFFREEK SOCIETY - HOMEPAGE STYLES
+   OFFREEK SOCIETY - HOMEPAGE & GEMINI SIDEBAR STYLES
    ========================================================================== */
 
-/* Smooth Scrolling for Anchor Links */
+/* Smooth Scrolling & Base Styles */
 html {
     scroll-behavior: smooth;
 }
@@ -12,7 +12,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   1. GOLD HIGHLIGHTS & TOP NAV CART BADGE
+   1. GOLD HIGHLIGHTS & HEADER CART LINK
    -------------------------------------------------------------------------- */
 .gold-link {
     color: #d4af37 !important;
@@ -47,7 +47,249 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   2. HERO SECTION
+   2. GEMINI-STYLE COLLAPSIBLE SIDEBAR
+   -------------------------------------------------------------------------- */
+/* Collapsed State (Only Icons Visible) */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    background-color: #111111;
+    border-right: 1px solid #222222;
+    z-index: 10000;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Expanded State (Icons + Labels Visible) */
+.side-drawer.expanded {
+    width: 240px;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Sidebar Header & Toggle Icon */
+.side-drawer-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222222;
+    cursor: pointer;
+}
+
+.side-drawer-toggle-btn {
+    color: #d4af37;
+    font-size: 20px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.side-drawer-title {
+    color: #d4af37;
+    font-family: 'Marcellus', serif;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.side-drawer.expanded .side-drawer-title {
+    opacity: 1;
+}
+
+/* Navigation Links */
+.side-drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.side-drawer-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #cccccc;
+    text-decoration: none;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.side-drawer-links a i {
+    font-size: 18px;
+    min-width: 20px;
+    text-align: center;
+    color: #d4af37;
+}
+
+.side-drawer-links a span {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.side-drawer.expanded .side-drawer-links a span {
+    opacity: 1;
+}
+
+.side-drawer-links a:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+/* Backdrop Overlay */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}
+
+.drawer-overlay.active {
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. PINNED BOTTOM SLOT & CONTACT QUICK-CONNECT POPOUT
+   -------------------------------------------------------------------------- */
+.side-drawer-bottom {
+    border-top: 1px solid #222222;
+    padding-top: 12px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.contact-popout-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.contact-trigger {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #cccccc;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-trigger i {
+    font-size: 18px;
+    min-width: 20px;
+    text-align: center;
+    color: #d4af37;
+}
+
+.contact-trigger span {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    flex-grow: 1;
+}
+
+.side-drawer.expanded .contact-trigger span {
+    opacity: 1;
+}
+
+.popout-arrow {
+    font-size: 12px !important;
+    transition: transform 0.3s ease;
+}
+
+.contact-popout-wrapper.active .popout-arrow {
+    transform: rotate(90deg);
+}
+
+/* Floating Action Card */
+.contact-popout-card {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    margin-left: 15px;
+    width: 220px;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-popout-wrapper.active .contact-popout-card {
+    display: flex;
+}
+
+.popout-header {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888888;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+/* Quick Action Buttons */
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.wa-btn {
+    background-color: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+}
+
+.wa-btn:hover {
+    background-color: #25D366;
+    color: #ffffff;
+}
+
+.call-btn {
+    background-color: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+}
+
+.call-btn:hover {
+    background-color: #d4af37;
+    color: #111111;
+}
+
+.page-btn {
+    background-color: #252525;
+    color: #cccccc;
+}
+
+.page-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO BANNER & EDITORIAL SHELVES
    -------------------------------------------------------------------------- */
 .hero-section {
     position: relative;
@@ -106,9 +348,6 @@ body {
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
 }
 
-/* --------------------------------------------------------------------------
-   3. EDITORIAL SHELVES SECTION
-   -------------------------------------------------------------------------- */
 .editorial-section {
     max-width: 1100px;
     margin: 0 auto;
@@ -184,69 +423,11 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
-/* --------------------------------------------------------------------------
-   4. MAP CONTAINER
-   -------------------------------------------------------------------------- */
 .map-wrapper-box {
     position: relative;
     width: 100%;
-    margin-bottom: 0;
 }
 
-/* Flexible container to push Contact to the bottom slot */
-.side-drawer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Main Links Container */
-.side-drawer-links {
-    flex-grow: 1;
-}
-
-/* Bottom Slot Styling (Contact Button) */
-.side-drawer-bottom {
-    border-top: 1px solid #222222;
-    padding-top: 12px;
-    margin-top: 15px;
-}
-
-.side-drawer-bottom a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #cccccc;
-    text-decoration: none;
-    padding: 12px 10px;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.side-drawer-bottom a i {
-    font-size: 18px;
-    min-width: 20px;
-    text-align: center;
-    color: #d4af37;
-}
-
-.side-drawer-bottom a span {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.side-drawer.expanded .side-drawer-bottom a span {
-    opacity: 1;
-}
-
-.side-drawer-bottom a:hover {
-    background-color: #222222;
-    color: #ffffff;
-}
-/* --------------------------------------------------------------------------
-   6. ANIMATIONS & RESPONSIVE ADJUSTMENTS
-   -------------------------------------------------------------------------- */
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -275,128 +456,3 @@ body {
         margin: 0 auto 15px auto;
     }
 }
-
-/* Contact Popout Wrapper */
-.side-drawer-bottom {
-    border-top: 1px solid #222222;
-    padding-top: 12px;
-    margin-top: 15px;
-    position: relative;
-}
-
-.contact-popout-wrapper {
-    position: relative;
-    cursor: pointer;
-}
-
-.contact-trigger {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #cccccc;
-    padding: 12px 10px;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.contact-trigger i {
-    font-size: 18px;
-    min-width: 20px;
-    text-align: center;
-    color: #d4af37;
-}
-
-.contact-trigger span {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    flex-grow: 1;
-}
-
-.side-drawer.expanded .contact-trigger span {
-    opacity: 1;
-}
-
-.popout-arrow {
-    font-size: 12px !important;
-    transition: transform 0.3s ease;
-}
-
-.contact-popout-wrapper.active .popout-arrow {
-    transform: rotate(90deg);
-}
-
-/* Floating Action Card */
-.contact-popout-card {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    margin-left: 15px;
-    width: 220px;
-    background-color: #1a1a1a;
-    border: 1px solid #333333;
-    border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    z-index: 10001;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contact-popout-wrapper.active .contact-popout-card,
-.contact-popout-wrapper:hover .contact-popout-card {
-    display: flex;
-}
-
-.popout-header {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888888;
-    margin-bottom: 4px;
-    font-weight: 600;
-}
-
-/* Quick Action Buttons */
-.quick-action-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    transition: background 0.2s ease;
-}
-
-.wa-btn {
-    background-color: rgba(37, 211, 102, 0.15);
-    color: #25D366;
-}
-
-.wa-btn:hover {
-    background-color: #25D366;
-    color: #ffffff;
-}
-
-.call-btn {
-    background-color: rgba(212, 175, 55, 0.15);
-    color: #d4af37;
-}
-
-.call-btn:hover {
-    background-color: #d4af37;
-    color: #111111;
-}
-
-.page-btn {
-    background-color: #252525;
-    color: #cccccc;
-}
-
-.page-btn:hover {
-    background-color: #333333;
-    color: #ffffff;
-} 
