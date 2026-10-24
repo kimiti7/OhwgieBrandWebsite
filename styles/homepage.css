@@ -275,3 +275,128 @@ body {
         margin: 0 auto 15px auto;
     }
 }
+
+/* Contact Popout Wrapper */
+.side-drawer-bottom {
+    border-top: 1px solid #222222;
+    padding-top: 12px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.contact-popout-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.contact-trigger {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #cccccc;
+    padding: 12px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-trigger i {
+    font-size: 18px;
+    min-width: 20px;
+    text-align: center;
+    color: #d4af37;
+}
+
+.contact-trigger span {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    flex-grow: 1;
+}
+
+.side-drawer.expanded .contact-trigger span {
+    opacity: 1;
+}
+
+.popout-arrow {
+    font-size: 12px !important;
+    transition: transform 0.3s ease;
+}
+
+.contact-popout-wrapper.active .popout-arrow {
+    transform: rotate(90deg);
+}
+
+/* Floating Action Card */
+.contact-popout-card {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    margin-left: 15px;
+    width: 220px;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-popout-wrapper.active .contact-popout-card,
+.contact-popout-wrapper:hover .contact-popout-card {
+    display: flex;
+}
+
+.popout-header {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888888;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+/* Quick Action Buttons */
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.wa-btn {
+    background-color: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+}
+
+.wa-btn:hover {
+    background-color: #25D366;
+    color: #ffffff;
+}
+
+.call-btn {
+    background-color: rgba(212, 175, 55, 0.15);
+    color: #d4af37;
+}
+
+.call-btn:hover {
+    background-color: #d4af37;
+    color: #111111;
+}
+
+.page-btn {
+    background-color: #252525;
+    color: #cccccc;
+}
+
+.page-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+} 

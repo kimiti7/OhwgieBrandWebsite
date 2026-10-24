@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/media-queries.css">
-    <!-- Link to our dedicated layout stylesheet -->
     <link rel="stylesheet" href="styles/custom-home.css">
 
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
@@ -24,49 +23,99 @@
 <body>
 
     <!-- Gemini-Style Collapsible Sidebar -->
-<div class="drawer-overlay" id="drawerOverlay" onclick="toggleSideMenu()"></div>
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleSideMenu()"></div>
 
-<div class="side-drawer" id="sideDrawer">
-    <div class="side-drawer-header" onclick="toggleSideMenu()">
-        <div class="side-drawer-toggle-btn">
-            <i class="fa-solid fa-bars"></i>
+    <div class="side-drawer" id="sideDrawer">
+        <div>
+            <div class="side-drawer-header" onclick="toggleSideMenu()">
+                <div class="side-drawer-toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <span class="side-drawer-title">OFFREEK SOCIETY</span>
+            </div>
+            
+            <!-- Top & Main Navigation Links -->
+            <div class="side-drawer-links">
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="menu.html">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="gear.html">
+                    <i class="fa-solid fa-shirt"></i>
+                    <span>Gear</span>
+                </a>
+                <a href="merch.html">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Merch</span>
+                </a>
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
         </div>
-        <span class="side-drawer-title">OFFREEK SOCIETY</span>
-    </div>
-    
-    <!-- Top & Main Navigation Links -->
-    <div class="side-drawer-links">
-        <a href="index.html">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-        </a>
-        <a href="menu.html">
-            <i class="fa-solid fa-cookie-bite"></i>
-            <span>Menu</span>
-        </a>
-        <a href="gear.html">
-            <i class="fa-solid fa-shirt"></i>
-            <span>Gear</span>
-        </a>
-        <a href="merch.html">
-            <i class="fa-solid fa-store"></i>
-            <span>Merch</span>
-        </a>
-        <a href="cart.html">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>Cart</span>
-        </a>
+
+        <!-- Pinned Bottom Slot: Contact Button with Quick-Connect Popout -->
+        <div class="side-drawer-bottom">
+            <div class="contact-popout-wrapper" onclick="toggleContactPopout(event)">
+                <div class="contact-trigger">
+                    <i class="fa-solid fa-address-book"></i>
+                    <span>Contact Us</span>
+                    <i class="fa-solid fa-chevron-right popout-arrow"></i>
+                </div>
+                
+                <!-- Expandable Popout Card -->
+                <div class="contact-popout-card" id="contactPopoutCard">
+                    <div class="popout-header">Quick Connect</div>
+                    
+                    <!-- WhatsApp Action -->
+                    <a href="https://wa.me/254748692188?text=Hello%20Offreek%20Society,%20I%20have%20an%20inquiry." target="_blank" class="quick-action-btn wa-btn">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Chat on WhatsApp</span>
+                    </a>
+                    
+                    <!-- Direct Phone Call Action -->
+                    <a href="tel:+254748692188" class="quick-action-btn call-btn">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Call +254 748 692 188</span>
+                    </a>
+
+                    <!-- View Contact Page -->
+                    <a href="contact.html" class="quick-action-btn page-btn">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Open Contact Page</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Bottom Slot: Contact Button (replaces Settings) -->
-    <div class="side-drawer-bottom">
-        <a href="contact.html">
-            <i class="fa-solid fa-address-book"></i>
-            <span>Contact Us</span>
-        </a>
-    </div>
-</div>
-                <!-- Cart Integrated Directly into Top Header Nav -->
+    <!-- Main Navigation Bar -->
+    <div class="navigation-wrapper">
+        <div class="left-column">
+            <div class="icon">
+                <a href="tel:+254748692188" class="gold-link"><i class="fa-solid fa-phone-volume"></i></a>
+            </div>
+            <div class="contact-hours-wrapper">
+                <div class="phone"><a href="tel:+254748692188" class="gold-link">+254748692188</a></div>
+                <div class="hours">7 AM - 10 PM</div>
+            </div>
+        </div>
+
+        <div class="center-column">
+            <div class="banner-image">
+                <img src="Images/Logos/Offreek Logo.png" alt="Offreek Society Logo">
+            </div>
+            <div class="links-wrapper">
+                <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="menu.html">Menu</a></div>
+                <div class="nav-link"><a href="gear.html">Gear</a></div>
+                <div class="nav-link"><a href="merch.html">Merch</a></div>
+                <div class="nav-link"><a href="contact.html">Contact</a></div>
                 <div class="nav-link">
                     <a href="cart.html" class="header-cart-link" title="View Cart">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -89,7 +138,7 @@
     <div class="hero-section">
         <h1>Offreek Cookies</h1>
         <h3>Artisanal Baking & Fresh Fruits Delivered in Ruiru</h3>
-        <button onclick="openSideMenu()" class="cta-btn menu-drawer-btn">View Our Menu</button>
+        <button onclick="toggleSideMenu()" class="cta-btn menu-drawer-btn">View Our Menu</button>
     </div>    
 
     <div class="editorial-section">
@@ -197,17 +246,8 @@
         </div>
     </div>
 
+    <!-- Main Logic & Sidebar Scripts -->
     <script src="script.js"></script>
-    <script>
-        function openSideMenu() {
-            document.getElementById('sideDrawer').classList.add('open');
-            document.getElementById('drawerOverlay').classList.add('active');
-        }
-
-        function closeSideMenu() {
-            document.getElementById('sideDrawer').classList.remove('open');
-            document.getElementById('drawerOverlay').classList.remove('active');
-        }
-    </script>
+    <script src="js/sidebar.js"></script>
 </body>
 </html>
