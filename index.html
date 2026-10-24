@@ -23,44 +23,49 @@
 </head>
 <body>
 
-    <!-- Side Navigation Panel Drawer -->
-    <div class="drawer-overlay" id="drawerOverlay" onclick="closeSideMenu()"></div>
-    <div class="side-drawer" id="sideDrawer">
-        <div class="side-drawer-header">
-            <h3>OFFREEK SOCIETY</h3>
-            <span class="side-drawer-close" onclick="closeSideMenu()">&times;</span>
+    <!-- Gemini-Style Collapsible Sidebar -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="toggleSideMenu()"></div>
+
+<div class="side-drawer" id="sideDrawer">
+    <div class="side-drawer-header" onclick="toggleSideMenu()">
+        <div class="side-drawer-toggle-btn">
+            <i class="fa-solid fa-bars"></i>
         </div>
-        <div class="side-drawer-links">
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="menu.html"><i class="fa-solid fa-cookie-bite"></i> Menu</a>
-            <a href="gear.html"><i class="fa-solid fa-shirt"></i> Gear</a>
-            <a href="merch.html"><i class="fa-solid fa-store"></i> Merch</a>
-            <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
-        </div>
+        <span class="side-drawer-title">OFFREEK SOCIETY</span>
+    </div>
+    
+    <!-- Top & Main Navigation Links -->
+    <div class="side-drawer-links">
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="menu.html">
+            <i class="fa-solid fa-cookie-bite"></i>
+            <span>Menu</span>
+        </a>
+        <a href="gear.html">
+            <i class="fa-solid fa-shirt"></i>
+            <span>Gear</span>
+        </a>
+        <a href="merch.html">
+            <i class="fa-solid fa-store"></i>
+            <span>Merch</span>
+        </a>
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart</span>
+        </a>
     </div>
 
-    <div class="navigation-wrapper">
-        <div class="left-column">
-            <div class="icon">
-                <a href="tel:+254748692188" class="gold-link"><i class="fa-solid fa-phone-volume"></i></a>
-            </div>
-            <div class="contact-hours-wrapper">
-                <div class="phone"><a href="tel:+254748692188" class="gold-link">+254748692188</a></div>
-                <div class="hours">7 AM - 10 PM</div>
-            </div>
-        </div>
-
-        <div class="center-column">
-            <div class="banner-image">
-                <img src="Images/Logos/Offreek Logo.png" alt="Offreek Society Logo">
-            </div>
-            <div class="links-wrapper">
-                <div class="nav-link"><a href="index.html">Home</a></div>
-                <div class="nav-link"><a href="menu.html">Menu</a></div>
-                <div class="nav-link"><a href="gear.html">Gear</a></div>
-                <div class="nav-link"><a href="merch.html">Merch</a></div>
-                <div class="nav-link"><a href="contact.html">Contact</a></div>
+    <!-- Bottom Slot: Contact Button (replaces Settings) -->
+    <div class="side-drawer-bottom">
+        <a href="contact.html">
+            <i class="fa-solid fa-address-book"></i>
+            <span>Contact Us</span>
+        </a>
+    </div>
+</div>
                 <!-- Cart Integrated Directly into Top Header Nav -->
                 <div class="nav-link">
                     <a href="cart.html" class="header-cart-link" title="View Cart">
