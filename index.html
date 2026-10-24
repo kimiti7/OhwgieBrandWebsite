@@ -16,49 +16,67 @@
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/media-queries.css">
+    <!-- Link to our dedicated layout stylesheet -->
+    <link rel="stylesheet" href="styles/custom-home.css">
 
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 
-<!-- Floating Cart Button -->
-<a href="cart.html" class="floating-top-cart" title="View Cart">
-    <div class="cart-icon-wrapper">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span class="cart-badge-count" id="floatingCartBadge">0</span>
+    <!-- Side Navigation Panel Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeSideMenu()"></div>
+    <div class="side-drawer" id="sideDrawer">
+        <div class="side-drawer-header">
+            <h3>OFFREEK SOCIETY</h3>
+            <span class="side-drawer-close" onclick="closeSideMenu()">&times;</span>
+        </div>
+        <div class="side-drawer-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="menu.html"><i class="fa-solid fa-cookie-bite"></i> Menu</a>
+            <a href="gear.html"><i class="fa-solid fa-shirt"></i> Gear</a>
+            <a href="merch.html"><i class="fa-solid fa-store"></i> Merch</a>
+            <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</a>
+        </div>
     </div>
-    <span class="cart-btn-label">Cart</span>
-</a>
 
     <div class="navigation-wrapper">
         <div class="left-column">
             <div class="icon">
-                <a href="tel:+254748692188"><i class="fa-solid fa-phone-volume"></i></a>
+                <a href="tel:+254748692188" class="gold-link"><i class="fa-solid fa-phone-volume"></i></a>
             </div>
             <div class="contact-hours-wrapper">
-                <div class="phone"><a href="tel:+254748692188">+254748692188</a></div>
+                <div class="phone"><a href="tel:+254748692188" class="gold-link">+254748692188</a></div>
                 <div class="hours">7 AM - 10 PM</div>
             </div>
         </div>
 
         <div class="center-column">
             <div class="banner-image">
-                <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+                <img src="Images/Logos/Offreek Logo.png" alt="Offreek Society Logo">
             </div>
             <div class="links-wrapper">
                 <div class="nav-link"><a href="index.html">Home</a></div>
+                <div class="nav-link"><a href="menu.html">Menu</a></div>
                 <div class="nav-link"><a href="gear.html">Gear</a></div>
                 <div class="nav-link"><a href="merch.html">Merch</a></div>
                 <div class="nav-link"><a href="contact.html">Contact</a></div>
+                <!-- Cart Integrated Directly into Top Header Nav -->
+                <div class="nav-link">
+                    <a href="cart.html" class="header-cart-link" title="View Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Cart (<span id="floatingCartBadge">0</span>)
+                    </a>
+                </div>
             </div>
         </div>
 
         <div class="right-column">
             <div class="address-wrapper">
-                <a href="#map">Ruiru<br>Nairobi, KE, 254</a>
+                <a href="#map" class="gold-link">Ruiru<br>Nairobi, KE, 254</a>
             </div>
             <div class="contact-icon">
-                <a href="#map"><i class="fa-solid fa-map-location-dot"></i></a>
+                <a href="#map" class="gold-link"><i class="fa-solid fa-map-location-dot"></i></a>
             </div>
         </div>
     </div>
@@ -66,12 +84,10 @@
     <div class="hero-section">
         <h1>Offreek Cookies</h1>
         <h3>Artisanal Baking & Fresh Fruits Delivered in Ruiru</h3>
-        <a href="menu.html" class="cta-btn">View Our Menu</a>
+        <button onclick="openSideMenu()" class="cta-btn menu-drawer-btn">View Our Menu</button>
     </div>    
-    
 
     <div class="editorial-section">
-
         <!-- Shelf 1 -->
         <div class="story-block" style="animation-delay: 0.2s;">
             <div class="story-text">
@@ -97,7 +113,7 @@
         </div>
 
         <!-- Shelf 3 -->
-        <div class="story-block" style="animation-delay: 0.4s;">
+        <div class="story-block" style="animation-delay: 0.3s;">
             <div class="story-text">
                 <span class="story-badge">Shelf 03</span>
                 <h2>Stuffed Cores</h2>
@@ -143,63 +159,28 @@
                 <span>[Combo High-Res Visual]</span>
             </div>
         </div>
-
     </div>
 
-<div class="delivery-calculator-section">
-    <div class="calculator-card">
-        <h2><i class="fa-solid fa-route"></i> Estimate Delivery & Fee</h2>
-        <p>Select your delivery drop-off zone in Ruiru to calculate distance and rider fare.</p>
-
-        <div class="calc-form">
-            <div class="input-group">
-                <label for="deliveryZone">Select Delivery Location:</label>
-                <select id="deliveryZone" class="select-input" onchange="calculateDelivery()">
-                    <option value="0" data-fee="0" data-time="0">-- Select Drop-off Zone --</option>
-                    <option value="Ruiru Town Center" data-fee="100" data-time="15-20 mins">Ruiru Town Center (~1.5 km)</option>
-                    <option value="Kimbo / Matangi" data-fee="150" data-time="20-25 mins">Kimbo / Matangi (~3.0 km)</option>
-                    <option value="Kenyatta University (KU)" data-fee="200" data-time="25-30 mins">KU Main Campus (~5.5 km)</option>
-                    <option value="Membley Estate" data-fee="200" data-time="25-30 mins">Membley Estate (~6.0 km)</option>
-                    <option value="Kiu River / Kahawa Sukari" data-fee="250" data-time="30-40 mins">Kahawa Sukari / Kiu River (~7.5 km)</option>
-                    <option value="Githurai 45" data-fee="300" data-time="35-45 mins">Githurai 45 (~9.0 km)</option>
-                </select>
-            </div>
-
-            <div class="calc-results" id="calcResults" style="display: none;">
-                <div class="result-box">
-                    <span>Estimated Fare</span>
-                    <strong id="fareAmount">KES 0</strong>
-                </div>
-                <div class="result-box">
-                    <span>Est. Arrival Time</span>
-                    <strong id="etaTime">0 mins</strong>
-                </div>
-            </div>
-
-            <a id="whatsappDeliveryBtn" href="#" class="order-btn" style="display: none; margin-top: 15px;" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Confirm & Request Rider on WhatsApp
-            </a>
-        </div>
-    </div>
-</div>
-
-    <div class="map-section" id="map">
+    <!-- Map Container -->
+    <div class="map-wrapper-box" id="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.038717017838!2d36.971757573322655!3d-1.1326741354740797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f479b6fcec515%3A0xfbf789465f996959!2sKimbo!5e0!3m2!1sen!2ske!4v1755693249329!5m2!1sen!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="footer">
         <div class="logo-footer">
-            <img src="Images/Logos/Offreek Logo.png" alt="Logo">
+            <img src="Images/Logos/Offreek Logo.png" alt="Offreek Society Logo">
         </div>
         <div class="footer-phone-hours">
-            <span class="phone"><a href="tel:+254748692188">+254748692188</a></span>
+            <span class="phone"><a href="tel:+254748692188" class="gold-link">+254748692188</a></span>
             <span class="hours">7 AM - 10 PM</span>
         </div>
         <div class="links-wrapper">
             <div class="nav-link"><a href="index.html">Home</a></div>
+            <div class="nav-link"><a href="menu.html">Menu</a></div>
             <div class="nav-link"><a href="gear.html">Gear</a></div>
             <div class="nav-link"><a href="merch.html">Merch</a></div>
             <div class="nav-link"><a href="contact.html">Contact</a></div>
+            <div class="nav-link"><a href="cart.html" class="gold-link">Cart</a></div>
         </div>
         <div class="social-media-icons-wrapper">
             <a href="https://www.instagram.com/offreeksociety/"><i class="fa-brands fa-instagram"></i></a>
@@ -211,8 +192,17 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        function openSideMenu() {
+            document.getElementById('sideDrawer').classList.add('open');
+            document.getElementById('drawerOverlay').classList.add('active');
+        }
+
+        function closeSideMenu() {
+            document.getElementById('sideDrawer').classList.remove('open');
+            document.getElementById('drawerOverlay').classList.remove('active');
+        }
     </script>
 </body>
 </html>
